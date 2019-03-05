@@ -1,0 +1,10 @@
+<manifest package="com.erajie.rxrqcode"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 打开闪光灯 -->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <application>
+        <activity android:name=".ActivityScanerCode"/>
+    </application>
+
+</manifest>

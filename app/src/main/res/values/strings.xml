@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Frame</string>
+    <string name="string_title1">页面1</string>
+    <string name="string_title2">页面2</string>
+    <string name="string_title3">页面3</string>
+    <string name="string_title4">页面4</string>
+    <string name="string_title5">页面5</string>
+    <string name="string_btn_text1">stara</string>
+    <string name="string_btn_text2">create</string>
+    <string name="string_btn_text3">btn3</string>
+    <string name="string_btn_text4">btn4</string>
+
+</resources>
