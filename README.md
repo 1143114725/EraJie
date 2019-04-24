@@ -1,16 +1,3 @@
 # EraJieZhang
 
-设置为私有项目
-测试提交 ctrl K
-
-创建EraJieZhang branch 提交测试
-
-合并分支
-
-合并分支
-
-sss
-
-添加Tag 1.1.1
-
-1.1.2
+第一次修改文件提交到本地版本库

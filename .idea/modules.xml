@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/EraJieZhang.iml" filepath="$PROJECT_DIR$/EraJieZhang.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EraJie.iml" filepath="$PROJECT_DIR$/EraJie.iml" />
       <module fileurl="file://$PROJECT_DIR$/RxHttp/RxHttp.iml" filepath="$PROJECT_DIR$/RxHttp/RxHttp.iml" />
       <module fileurl="file://$PROJECT_DIR$/RxRQCode/RxRQCode.iml" filepath="$PROJECT_DIR$/RxRQCode/RxRQCode.iml" />
       <module fileurl="file://$PROJECT_DIR$/rxutils/RxUtils.iml" filepath="$PROJECT_DIR$/rxutils/RxUtils.iml" />
