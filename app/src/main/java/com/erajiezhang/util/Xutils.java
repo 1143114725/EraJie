@@ -1,9 +1,6 @@
 package com.erajiezhang.util;
 
-/**
- * xutils 网络请求管理类
- * Created by EEH on 2018/6/15.
- */
+
 
 import android.os.Handler;
 import android.os.Looper;
@@ -15,11 +12,10 @@ import org.xutils.x;
 
 import java.io.File;
 import java.util.Map;
-
 /**
- *
+ * xutils 网络请求管理类
+ * Created by EEH on 2018/6/15.
  */
-
 public class Xutils {
 	
 	private volatile static Xutils instance;
