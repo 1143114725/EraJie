@@ -11,6 +11,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
@@ -269,6 +270,25 @@ public class RxPhotoTool {
         }
         return null;
     }
-
-
+    
+    
+    
+    /**
+     * 根据Uri获取图片的绝对路径
+     * @param context 上下文对象
+     * @param uri     图片的Uri
+     * @return 如果Uri对应的图片存在, 那么返回该图片的绝对路径, 否则返回null
+     */
+    public static String getRealPathFromUri(Context context, Uri uri) {
+        
+        int sdkVersion = Build.VERSION.SDK_INT;
+        if (sdkVersion >= 19) { // api >= 19
+            return getImageAbsolutePath(context, uri);
+        } else { // api < 19
+            return getRealFilePath(context, uri);
+        }
+    }
+   
+    
+    
 }

@@ -49,5 +49,7 @@ dependencies {
     implementation var.zxing
     implementation var.xutils
     implementation var.android_async_http
+    implementation var.glide
+//    implementation var.glide_compiler
     implementation project(':RxRQCode')
 }
