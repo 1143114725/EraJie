@@ -6,15 +6,14 @@ import android.os.SystemClock;
 import android.support.annotation.NonNull;
 import android.util.Log;
 
+import com.erajie.rxutils.RxConstants;
+import com.erajie.rxutils.RxFileTool;
+import com.erajie.rxutils.RxVibrateTool;
+import com.erajie.rxutils.interfaces.OnRxCamera;
+import com.erajie.rxutils.module.photomagic.OnCompressListener;
+import com.erajie.rxutils.module.photomagic.RxMagic;
+import com.erajie.rxutils.view.RxToast;
 import com.vondear.camera.RxCameraView;
-import com.vondear.rxtool.RxConstants;
-import com.vondear.rxtool.RxExifTool;
-import com.vondear.rxtool.RxFileTool;
-import com.vondear.rxtool.RxVibrateTool;
-import com.vondear.rxtool.interfaces.OnRxCamera;
-import com.vondear.rxtool.module.photomagic.OnCompressListener;
-import com.vondear.rxtool.module.photomagic.RxMagic;
-import com.vondear.rxtool.view.RxToast;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -180,7 +179,7 @@ public class RxCameraTool {
 
                                 @Override
                                 public void onSuccess(File file) {
-                                    if (RxFileTool.copyOrMoveFile(file, compressFile, true)) {
+                                    if ( RxFileTool.copyOrMoveFile(file, compressFile, true)) {
                                         Log.d("图片压缩", "压缩完成");
                                         onRxCamera.onSuccessCompress(compressFile);
                                         if (mLongitude != 0 || mLatitude != 0) {
