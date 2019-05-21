@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.erajie.rxutils.RxConstants;
+import com.erajie.rxutils.RxExifTool;
 import com.erajie.rxutils.RxFileTool;
 import com.erajie.rxutils.RxVibrateTool;
 import com.erajie.rxutils.interfaces.OnRxCamera;

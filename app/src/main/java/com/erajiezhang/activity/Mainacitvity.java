@@ -1,15 +1,17 @@
 package com.erajiezhang.activity;
 
 import android.os.Bundle;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.erajie.rxutils.RxLogTool;
 import com.erajiezhang.R;
 import com.erajiezhang.base.BaseActivity;
+import com.erajiezhang.util.LinkageUtil;
 
 import java.util.ArrayList;
 
@@ -41,7 +43,9 @@ public class Mainacitvity extends BaseActivity {
 	@BindView(R.id.sp_dome_district)
 	Spinner mSpDomeDistrict;
 	ArrayList<String> districtlist = new ArrayList<>();
-	
+	@BindView(R.id.tv_dome_title)
+	TextView mTvDomeTitle;
+//	private HtmlSpanner htmlSpanner = new HtmlSpanner();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -49,6 +53,11 @@ public class Mainacitvity extends BaseActivity {
 		ButterKnife.bind(mActivity);
 		
 		setdate();
+		
+		
+		String text = "<font color='red' size='50px'>" + "要显示的数据" + "</font>";
+		Spanned spanned = Html.fromHtml(text);
+		mTvDomeTitle.setText(spanned);
 	}
 	
 	
@@ -62,11 +71,10 @@ public class Mainacitvity extends BaseActivity {
 		districtlist.add("C:shanghai");
 		
 		
+		LinkageUtil.setSpinnerdate(mActivity, provincelist, mSpDomeProvince);
+		LinkageUtil.setSpinnerdate(mActivity, catylist, mSpDomeCaty);
+		LinkageUtil.setSpinnerdate(mActivity, districtlist, mSpDomeDistrict);
 		
-		
-		setSpinnerdate(provincelist,mSpDomeProvince);
-		setSpinnerdate(catylist,mSpDomeCaty);
-		setSpinnerdate(districtlist,mSpDomeDistrict);
 		
 		mSpDomeProvince.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 			@Override
@@ -74,14 +82,14 @@ public class Mainacitvity extends BaseActivity {
 				RxLogTool.v("A:position=" + position);
 				RxLogTool.v("A:id=" + id);
 				TextView mTvspitemdome = parent.findViewById(R.id.tv_spitem_dome);
-				String  text = mTvspitemdome.getText().toString().trim();
+				String text = mTvspitemdome.getText().toString().trim();
 				RxLogTool.v("A:text=" + text);
 				
-				if ( id ==1 ){
-					setSpinnerdate(districtlist,mSpDomeCaty);
+				if ( id == 1 ) {
+					LinkageUtil.setSpinnerdate(mActivity, districtlist, mSpDomeCaty);
 				}
-				if ( id ==0){
-					setSpinnerdate(catylist,mSpDomeCaty);
+				if ( id == 0 ) {
+					LinkageUtil.setSpinnerdate(mActivity, catylist, mSpDomeCaty);
 				}
 				
 				
@@ -98,9 +106,6 @@ public class Mainacitvity extends BaseActivity {
 			public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
 				RxLogTool.v("B:position=" + position);
 				RxLogTool.v("B:id=" + id);
-//				TextView mTvspitemdome = parent.findViewById(R.id.tv_spitem_dome);
-//				String  text = mTvspitemdome.getText().toString().trim();
-//				RxLogTool.v("B:text=" + text);
 			}
 			
 			@Override
@@ -109,13 +114,6 @@ public class Mainacitvity extends BaseActivity {
 			}
 		});
 		
-	}
-	
-	private void setSpinnerdate(ArrayList<String> lsitdate,Spinner sp) {
-		ArrayAdapter<String> adapter = new ArrayAdapter<>(mActivity,
-			R.layout.sp_item_dome,
-			lsitdate);
-		sp.setAdapter(adapter);
 	}
 	
 	
