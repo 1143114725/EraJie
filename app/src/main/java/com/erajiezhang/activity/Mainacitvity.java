@@ -1,8 +1,12 @@
 package com.erajiezhang.activity;
 
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
-import android.text.Html;
-import android.text.Spanned;
+import android.support.annotation.RequiresApi;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.BackgroundColorSpan;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Spinner;
@@ -45,7 +49,9 @@ public class Mainacitvity extends BaseActivity {
 	ArrayList<String> districtlist = new ArrayList<>();
 	@BindView(R.id.tv_dome_title)
 	TextView mTvDomeTitle;
+	
 //	private HtmlSpanner htmlSpanner = new HtmlSpanner();
+	@RequiresApi(api = Build.VERSION_CODES.N)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -53,11 +59,15 @@ public class Mainacitvity extends BaseActivity {
 		ButterKnife.bind(mActivity);
 		
 		setdate();
-		
-		
-		String text = "<font color='red' size='50px'>" + "要显示的数据" + "</font>";
-		Spanned spanned = Html.fromHtml(text);
-		mTvDomeTitle.setText(spanned);
+		String text = "<span style=font-size:36px;>sssss</span>";
+		SpannableString spannableString = new SpannableString(text) ;
+		BackgroundColorSpan backgroundColorSpan = new BackgroundColorSpan(Color.RED);
+		spannableString.setSpan(backgroundColorSpan, 0, 10, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE) ;
+		mTvDomeTitle.setText(spannableString) ;
+	
+//		Spanned spanned = Html.fromHtml(text,0);
+//
+//		mTvDomeTitle.setText(spanned);
 	}
 	
 	
