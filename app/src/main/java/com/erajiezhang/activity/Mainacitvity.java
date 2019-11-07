@@ -48,6 +48,7 @@ public class Mainacitvity extends BaseActivity {
 	Spinner mSpDomeDistrict;
 	ArrayList<String> districtlist = new ArrayList<>();
 	@BindView(R.id.tv_dome_title)
+		
 	TextView mTvDomeTitle;
 	
 //	private HtmlSpanner htmlSpanner = new HtmlSpanner();

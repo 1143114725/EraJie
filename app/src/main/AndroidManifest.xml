@@ -18,7 +18,7 @@
 
 
         <activity
-            android:name=".activity.Mainacitvity"
+            android:name=".activity.ShowClockActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
