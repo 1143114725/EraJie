@@ -35,5 +35,6 @@ dependencies {
     implementation var.logger
     //压缩与加密
     implementation var.zip4j
+    implementation 'com.google.code.gson:gson:2.8.6'
 
 }
