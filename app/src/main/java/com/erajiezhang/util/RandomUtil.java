@@ -1,7 +1,6 @@
 package com.erajiezhang.util;
 
 import com.erajie.rxutils.GsonUtil;
-import com.erajiezhang.controller.TotalBean;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -28,8 +27,9 @@ public class RandomUtil {
 	
 	public static void main(String[] args) {
 		String result= "{\"total_0\":150,\"total_1\":200,\"total_2\":300,\"total_3\":5,\"total_4\":5,\"total_5\":6,\"total_6\":7,\"total_7\":8,\"total_8\":9,\"total_9\":10,\"total_10\":11,\"total_11\":2,\"total_12\":13,\"total_13\":5,\"total_14\":4,\"total_15\":2,\"total_16\":4,\"total_17\":5,\"total_18\":2,\"total_19\":1,\"total_20\":5,\"total_21\":2}";
-		TotalBean totalBean = new TotalBean(150,200,300,5,5,6,7,8,9,10,11,2,13,5,4,2,4,5,2,1,5,2);
-		String json = GsonUtil.BeanToJson(totalBean);
+//		TotalBean totalBean = new TotalBean(150,200,300,5,5,6,7,8,9,10,11,2,13,5,4,2,4,5,2,1,5,2);
+//		String json = GsonUtil.BeanToJson(totalBean);
+		String json = GsonUtil.BeanToJson("");
 		System.out.println("json:: = " + json);
 		
 		
@@ -65,57 +65,7 @@ public class RandomUtil {
 				smalllist.remove(0);
 			}
 		}
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-//		Map<String, Double> map = GsonUtil.GsonToMaps(json);
-//
-//		for (String key : map.keySet()) {
-//			System.out.println("Key = " + key + "value = " + map.get(key));
-//			if(map.get(key) >= 150.0){
-//				biglist.add(key.split("_")[1]);
-//			}
-//		}
-//		System.out.println("json:: = " + json);
-//
-//		for (int i = 0, size = 3; i < size; i++) {
-//			collist.add("col:" + i);
-//		}
-//		if ( collist.size() >4 ){
-//			//如果选中的超过四个 进入概率抽取
-//			//没超过150份的概率80%
-//			for (int i = 0, size = 10; i < size; i++) {
-//				biglist.add("big:" + i);
-//			}
-//			//超过150份的概率20%
-//			for (int i = 0, size = 10; i < size; i++) {
-//				smalllist.add("small:" + i);
-//			}
-//			Collections.shuffle(biglist);
-//			Collections.shuffle(smalllist);
-//			getrun();
-//		}else{
-//			//选中的小于等于四个，全部显示
-//			reslist.addAll(collist);
-//		}
-//		System.out.println("reslist:: = " + reslist.toString());
-		
+	
 
 	}
 

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+
+    <string name="app_name">SchulteGril</string>
+    <string name="app_version">版本信息：V %1$s</string>
+
+    <string name="QQ">%1$s 613691251</string>
+
+    <string name="Email">%1$s erajiezhang@foxmail.com</string>
+
+
+
+</resources>

@@ -1,1 +1,1 @@
-include ':app', ':RxUtils', ':RxHttp', ':RxRQCode','RxCamera'
+include ':app', ':RxUtils', ':RxHttp', ':RxRQCode','RxCamera','schultegril'
