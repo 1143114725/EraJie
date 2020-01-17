@@ -69,6 +69,7 @@ public class Mainacitvity extends BaseActivity {
 					navigation(mActivity,123);
 				break;
 			case R.id.button8:
+				BaseArouteUtil.returnActivity(ARouterPath.ShowImageActivity);
 				break;
 		}
 	}

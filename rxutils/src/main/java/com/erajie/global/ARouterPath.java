@@ -21,6 +21,8 @@ public class ARouterPath {
 	public static final String ShowClockActivity = "/activity/ShowClockActivity";
 	//主项目-测试三级联动
 	public static final String ThreelevellinkageActivity = "/activity/ThreelevellinkageActivity";
+	//主项目-测试图片旋转放大缩小
+	public static final String ShowImageActivity = "/activity/ShowImageActivity";
 	/**
 	 * 舒尔特表
 	 */

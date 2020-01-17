@@ -10,7 +10,7 @@ import com.erajie.rxutils.RxDataTool;
  * @data 2020/1/17
  */
 public class BaseArouteUtil {
-	private static final String defaultgroup = "app";
+	private static final String defaultgroup = "activity";
 	/**
 	 * 跳转页面-默认组
 	 * @param arouterPath

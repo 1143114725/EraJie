@@ -15,5 +15,5 @@
     <string name="string_btn_schultegril_game">跨模块跳转舒尔特</string>
     <string name="string_btn_interceptor">Arouter拦截器</string>
     <string name="string_btn_onactivityforresult">Arouter代值跳转回调</string>
-
+    <string name="string_btn_zoomImageView">缩放imageview</string>
 </resources>
