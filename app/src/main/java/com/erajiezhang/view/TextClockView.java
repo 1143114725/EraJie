@@ -128,7 +128,7 @@ public class TextClockView extends View {
 		int h = rect.height();
 		canvas.drawText(str, 0f, getBottomY(), mPaint);
 		String[] arr = {"星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"};
-		System.out.println("今天是：" + arr[calendar.get(Calendar.DAY_OF_WEEK) - 1]);
+//		System.out.println("今天是：" + arr[calendar.get(Calendar.DAY_OF_WEEK) - 1]);
 		String dayOfWeek = arr[calendar.get(Calendar.DAY_OF_WEEK) - 1];
 		int month = calendar.get(calendar.MONTH);
 		int day = calendar.get(calendar.DAY_OF_MONTH);

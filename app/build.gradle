@@ -9,6 +9,14 @@ android {
         versionCode var.versionCode
         versionName var.versionName
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        javaCompileOptions {
+
+            annotationProcessorOptions {
+
+                arguments = [moduleName :project.getName() ]
+
+            } }
     }
     buildTypes {
         release {
@@ -20,6 +28,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
 
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
 
 }
@@ -40,6 +52,12 @@ dependencies {
     //butterknife支持
     implementation var.butterknife
     annotationProcessor var.butterknife_compiler
+//
+//    implementation var.butterknife_plugin
+//    annotationProcessor var.butterknife_neenbedankt
+
+
+
     //新布局
     implementation var.constraint_layout
     //阿里巴巴旗下json解析工具库
@@ -52,4 +70,9 @@ dependencies {
     implementation var.glide
 //    implementation var.glide_compiler
     implementation project(':RxRQCode')
+    implementation project(':schultegril')
+
+    implementation'com.alibaba:arouter-api:1.3.1'
+    annotationProcessor'com.alibaba:arouter-compiler:1.1.4'
+    implementation 'com.android.support:multidex:1.0.3'
 }

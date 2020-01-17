@@ -11,4 +11,9 @@
     <string name="string_btn_text3">btn3</string>
     <string name="string_btn_text4">btn4</string>
 
+    <string name="string_btn_text_return_Arouter">测试Arouter跳转</string>
+    <string name="string_btn_schultegril_game">跨模块跳转舒尔特</string>
+    <string name="string_btn_interceptor">Arouter拦截器</string>
+    <string name="string_btn_onactivityforresult">Arouter代值跳转回调</string>
+
 </resources>
