@@ -53,12 +53,7 @@ public class Mainacitvity extends BaseActivity {
 				BaseArouteUtil.returnActivity(ARouterPath.GameContentActivity,ARouterPath.GROUP_SCHULTEGRIL);
 				break;
 			case R.id.button3:
-				BaseArouteUtil.getPostcard(ARouterPath.ShowClockActivity).
-					withString("rr", "jie").
-					withInt("z", 1).
-					withBoolean("b", true).
-					withParcelable("bean", (Parcelable) new ReturnBean("张世杰", "17090313417", "25")).
-					navigation(this, new LoginNavigationCallbackImpl()); // 第二个参数是路由跳转的回调
+				BaseArouteUtil.returnActivity(ARouterPath.GobangActivity);
 				break;
 			case R.id.button7:
 				BaseArouteUtil.getPostcard(ARouterPath.ThreelevellinkageActivity).

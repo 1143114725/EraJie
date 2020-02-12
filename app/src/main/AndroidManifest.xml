@@ -30,6 +30,7 @@
             android:name=".activity.ShowClockActivity"/>
         <activity android:name=".activity.ThreelevellinkageActivity"/>
         <activity android:name=".activity.ShowImageActivity"/>
+        <activity android:name=".activity.GobangActivity"/>
 
     </application>
 </manifest>

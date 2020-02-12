@@ -23,6 +23,8 @@ public class ARouterPath {
 	public static final String ThreelevellinkageActivity = "/activity/ThreelevellinkageActivity";
 	//主项目-测试图片旋转放大缩小
 	public static final String ShowImageActivity = "/activity/ShowImageActivity";
+	//主项目-五子棋
+	public static final String GobangActivity = "/activity/GobangActivity";
 	/**
 	 * 舒尔特表
 	 */
