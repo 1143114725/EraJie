@@ -1,0 +1,63 @@
+
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+
+android {
+    compileSdkVersion var.compileSdkVersion
+    defaultConfig {
+//        applicationId "cn.eeh.general"
+        minSdkVersion var.minSdkVersion
+        targetSdkVersion var.targetSdkVersion
+        versionCode var.versionCode
+        versionName var.versionName
+        javaCompileOptions {
+
+            annotationProcessorOptions {
+
+                arguments = [AROUTER_MODULE_NAME :project.getName() ]
+
+            } }
+    }
+
+    dataBinding {
+        enabled = true
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+//    testImplementation 'junit:junit:4.12'
+//    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
+//    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+
+    implementation project(':RxUtils')
+
+    //MD风格控件库
+    implementation 'com.google.android.material:material:1.1.0'
+    //recycleview
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    //cardview
+    implementation var.cardview
+    //新布局
+    implementation var.constraint_layout
+    //butterknife支持
+    implementation var.butterknife
+    annotationProcessor var.butterknife_compiler
+    //arouter
+    implementation 'com.alibaba:arouter-api:1.4.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
+
+    implementation 'androidx.multidex:multidex:2.0.1'
+    implementation 'org.jetbrains:annotations:19.0.0'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0'
+}

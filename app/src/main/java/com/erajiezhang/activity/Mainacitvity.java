@@ -3,7 +3,6 @@ package com.erajiezhang.activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.Button;
 
@@ -16,6 +15,8 @@ import com.erajie.rxutils.RxLogTool;
 import com.erajiezhang.R;
 import com.erajiezhang.base.BaseActivity;
 import com.erajiezhang.bean.ReturnBean;
+
+import org.jetbrains.annotations.Nullable;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -38,8 +39,7 @@ public class Mainacitvity extends BaseActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		ButterKnife.bind(mActivity);
-//		ARouter.getInstance().inject(this);
-		
+		BaseArouteUtil.returnActivity(ARouterPath.HomeActivity,ARouterPath.GROUP_GENERAL);
 	}
 	
 	@OnClick({R.id.toarouter, R.id.button2, R.id.button3, R.id.button7, R.id.button8})
@@ -53,12 +53,7 @@ public class Mainacitvity extends BaseActivity {
 				BaseArouteUtil.returnActivity(ARouterPath.GameContentActivity,ARouterPath.GROUP_SCHULTEGRIL);
 				break;
 			case R.id.button3:
-				BaseArouteUtil.getPostcard(ARouterPath.ShowClockActivity).
-					withString("rr", "jie").
-					withInt("z", 1).
-					withBoolean("b", true).
-					withParcelable("bean", (Parcelable) new ReturnBean("张世杰", "17090313417", "25")).
-					navigation(this, new LoginNavigationCallbackImpl()); // 第二个参数是路由跳转的回调
+				BaseArouteUtil.returnActivity(ARouterPath.GobangActivity);
 				break;
 			case R.id.button7:
 				BaseArouteUtil.getPostcard(ARouterPath.ThreelevellinkageActivity).

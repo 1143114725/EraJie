@@ -13,8 +13,8 @@
         android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme"
-        tools:ignore="GoogleAppIndexingWarning">
+        tools:ignore="GoogleAppIndexingWarning"
+        android:theme="@android:style/Theme.NoTitleBar">
 
 
         <activity
@@ -30,6 +30,7 @@
             android:name=".activity.ShowClockActivity"/>
         <activity android:name=".activity.ThreelevellinkageActivity"/>
         <activity android:name=".activity.ShowImageActivity"/>
+        <activity android:name=".activity.GobangActivity"/>
 
     </application>
 </manifest>

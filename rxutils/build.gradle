@@ -10,13 +10,13 @@ android {
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
         javaCompileOptions {
 
             annotationProcessorOptions {
 
-                arguments = [moduleName: project.getName()]
+                arguments = [AROUTER_MODULE_NAME: project.getName()]
 
             }
         }
@@ -33,23 +33,27 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    dataBinding {
+        enabled = true
+    }
 
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation var.SupportV7
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     //流式布局
     implementation var.flexbox
     //沉浸式
-    implementation var.systembartint
+    implementation 'com.readystatesoftware.systembartint:systembartint:1.0.4'
     //Log日志格式美化包
     implementation var.logger
     //压缩与加密
-    implementation var.zip4j
+    implementation 'net.lingala.zip4j:zip4j:2.3.2'
     implementation 'com.google.code.gson:gson:2.8.6'
 
-    implementation 'com.alibaba:arouter-api:1.3.1'
-    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+    implementation 'com.alibaba:arouter-api:1.4.0'
+    annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
 
 }

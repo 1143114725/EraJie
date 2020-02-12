@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable name="minuBean" type="cn.eeh.general.bean.MinuBean" />
+        <variable name="onClick" type="cn.eeh.general.main.OnClickHandler" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/fl_main_root"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/gray1"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:onClick="@{onClick::onClickAcademicCircles}"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:padding="@dimen/dp_8">
+
+                <ImageView
+                    android:id="@+id/iv_home_academicCirclesIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@{minuBean.academicCirclesIcon}" />
+
+                <TextView
+                    android:id="@+id/tv_home_academicCircles"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@{minuBean.academicCircles}"
+                    android:textColor="@color/back" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:onClick="@{onClick::onClickPublicClass}"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/dp_8"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/iv_home_publicClassIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@{minuBean.publicClassIcon}"/>
+                <TextView
+                    android:id="@+id/tv_home_publicClass"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/back"
+                    android:text="@{minuBean.publicClass}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:onClick="@{onClick::onClickFound}"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/dp_8"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/iv_home_foundIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@{minuBean.foundIcon}"/>
+                <TextView
+                    android:id="@+id/tv_home_found"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/back"
+                    android:text="@{minuBean.found}" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:onClick="@{onClick::onClickMy}"
+                android:id="@+id/ll_publicClass"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:padding="@dimen/dp_8"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/iv_home_myIcon"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:src="@{minuBean.myIcon}"/>
+                <TextView
+                    android:id="@+id/tv_home_my"
+                    android:layout_width="match_parent"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/back"
+                    android:text="@{minuBean.my}" />
+            </LinearLayout>
+
+
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+</layout>

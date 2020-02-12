@@ -1,12 +1,14 @@
 package com.erajiezhang.base;
 
 import android.app.Application;
-import android.support.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.erajie.rxutils.RxTool;
+import com.tencent.bugly.crashreport.CrashReport;
 
 import org.xutils.x;
+
+import androidx.multidex.MultiDex;
 
 
 /**
@@ -46,5 +48,8 @@ public class BaseApplication extends Application {
         ARouter.init(BaseApplication.this);
         // 初始化MultiDex
         MultiDex.install(this);
+    
+        //测试阶段建议设置成true，发布时设置为false。
+        CrashReport.initCrashReport(getApplicationContext(), "6f8a3fec40", true);
     }
 }

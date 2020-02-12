@@ -23,7 +23,7 @@ import android.view.ViewTreeObserver;
  *         可以缩放的ImageView
  */
 
-public class ZoomImageView extends android.support.v7.widget.AppCompatImageView implements ViewTreeObserver.OnGlobalLayoutListener, ScaleGestureDetector.OnScaleGestureListener, View.OnTouchListener {
+public class ZoomImageView extends androidx.appcompat.widget.AppCompatImageView implements ViewTreeObserver.OnGlobalLayoutListener, ScaleGestureDetector.OnScaleGestureListener, View.OnTouchListener {
 	private boolean isOnce = true;
 	private float                mInitScale;//最小的缩放值
 	private float                mMidScale;//中等的缩放值

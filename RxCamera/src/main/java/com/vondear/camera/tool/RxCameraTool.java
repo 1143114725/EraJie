@@ -3,7 +3,7 @@ package com.vondear.camera.tool;
 import android.content.Context;
 import android.hardware.Camera;
 import android.os.SystemClock;
-import android.support.annotation.NonNull;
+import androidx.annotation.NonNull;
 import android.util.Log;
 
 import com.erajie.rxutils.RxConstants;

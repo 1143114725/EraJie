@@ -106,7 +106,7 @@ public class GameContentActivity extends BaseActivity {
 	}
 	
 	/**
-	 * 创建ll
+	 * 创建LinearLayout
 	 *
 	 * @return
 	 */

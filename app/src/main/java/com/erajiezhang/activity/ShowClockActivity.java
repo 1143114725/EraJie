@@ -48,7 +48,7 @@ public class ShowClockActivity extends BaseActivity {
 		RxLogTool.v("era = " + era );
 		RxLogTool.v("z = " + z );
 		RxLogTool.v("mBoolean = " + mBoolean );
-		RxLogTool.v("mReturnBean = " + mReturnBean.toString() );
+//		RxLogTool.v("mReturnBean = " + mReturnBean.toString() );
 		
 		mClockView.start(true);
 	}

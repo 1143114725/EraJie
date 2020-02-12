@@ -9,6 +9,7 @@ public class ARouterPath {
 	/*********************************Group*******************************************/
 	public static final String GROUP_MAIN = "main";
 	public static final String GROUP_SCHULTEGRIL = "schultegril";
+	public static final String GROUP_GENERAL = "general";
 	
 
 	/*******************************Activity*******************************************/
@@ -23,6 +24,8 @@ public class ARouterPath {
 	public static final String ThreelevellinkageActivity = "/activity/ThreelevellinkageActivity";
 	//主项目-测试图片旋转放大缩小
 	public static final String ShowImageActivity = "/activity/ShowImageActivity";
+	//主项目-五子棋
+	public static final String GobangActivity = "/activity/GobangActivity";
 	/**
 	 * 舒尔特表
 	 */
@@ -32,4 +35,19 @@ public class ARouterPath {
 	public static final String ContactUsActivity = "/activity/ContactUsActivity";
 	//舒尔特表-首页
 	public static final String WelcomeActivity = "/activity/WelcomeActivity";
+	/**
+	 * 丁香园
+	 */
+	//首页，欢迎页
+	public static final String HomeActivity = "/home/HomeActivity";
+	//广告H5页面
+	public static final String AdvertisingActivity = "/advertising/AdvertisingActivity";
+	//主页面
+	public static final String MainActivity = "/main/MainActivity";
+	
+	public static final String MyFragment = "/fragment/MyFragment";
+	public static final String FoundFragment = "/fragment/FoundFragment";
+	public static final String AcademicCirclesFragment = "/academic/AcademicCirclesFragment";
+	public static final String PublicClassFragment = "/fragment/PublicClassFragment";
+	
 }

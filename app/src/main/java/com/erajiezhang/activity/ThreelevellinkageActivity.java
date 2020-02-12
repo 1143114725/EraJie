@@ -1,9 +1,7 @@
 package com.erajiezhang.activity;
 
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.RequiresApi;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.style.BackgroundColorSpan;
@@ -54,7 +52,6 @@ public class ThreelevellinkageActivity  extends BaseActivity {
 	TextView mTvDomeTitle;
 	
 	//	private HtmlSpanner htmlSpanner = new HtmlSpanner();
-	@RequiresApi(api = Build.VERSION_CODES.N)
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="cn.eeh.general">
+    <application>
+        <activity android:name=".home.HomeActivity"/>
+        <activity android:name=".advertising.AdvertisingActivity"/>
+        <activity android:name=".main.MainActivity"/>
+    </application>
+
+
+</manifest>
