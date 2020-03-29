@@ -74,6 +74,7 @@ dependencies {
     implementation project(':RxRQCode')
     implementation project(':schultegril')
     implementation project(':General')
+//    implementation project(':RxUI')
 
     implementation 'com.alibaba:arouter-api:1.4.0'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
@@ -81,4 +82,7 @@ dependencies {
     implementation 'org.jetbrains:annotations:19.0.0'
 
     implementation 'com.tencent.bugly:crashreport:3.1.0'
+
+    implementation 'com.github.bumptech.glide:glide:4.5.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
 }

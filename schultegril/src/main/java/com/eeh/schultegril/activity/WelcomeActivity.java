@@ -55,14 +55,12 @@ public class WelcomeActivity extends BaseActivity {
 	 */
 	private void getermission() {
 		
-		String permission[] = new String[]{Manifest.permission.READ_PHONE_STATE, Manifest.permission.PROCESS_OUTGOING_CALLS, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.RECORD_AUDIO};
-		PermissionUtil.isPermissions(mActivity, 200, permission, new PermissionUtil.Operation() {
-			@Override
-			public void OnNext() {
+		String permission[] = new String[]{Manifest.permission.READ_PHONE_STATE,
+				Manifest.permission.PROCESS_OUTGOING_CALLS,
+				Manifest.permission.WRITE_EXTERNAL_STORAGE,
+				Manifest.permission.RECORD_AUDIO};
+		PermissionUtil.with(mActivity).isPermissions(permission,null);
 
-//                BaseToast.showShortToast(mActivity, "权限注册成功！");
-			}
-		});
 	}
 	
 	/**

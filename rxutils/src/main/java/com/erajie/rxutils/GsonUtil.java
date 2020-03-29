@@ -7,6 +7,9 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonParser;
 import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -28,8 +31,24 @@ public class GsonUtil {
 	
 	public GsonUtil() {
 	}
-	
-	
+
+	/**
+	 * 获取属性
+	 * @param json {“name”:"data",“name”:"data",“name”:"data"}
+	 * @param attr 属性名
+	 * @return	对应属性值
+	 */
+	public static String getattr(String json,String attr){
+		JSONObject jsonObject = null;
+		String unid = "";
+		try {
+			jsonObject = new JSONObject(json);
+			unid = jsonObject.optString(attr);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+		return unid;
+	}
 	
 	/**
 	 * 将object对象转成json字符串
