@@ -2,13 +2,13 @@ package com.erajiezhang.base;
 
 import android.app.Application;
 
+import androidx.multidex.MultiDex;
+
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.erajie.rxutils.RxTool;
 import com.tencent.bugly.crashreport.CrashReport;
 
 import org.xutils.x;
-
-import androidx.multidex.MultiDex;
 
 
 /**

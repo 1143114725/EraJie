@@ -1,6 +1,23 @@
 apply plugin: 'com.android.application'
+apply plugin: 'org.greenrobot.greendao'
 
 android {
+
+    //配置数据库,配置版本号即可,其他的只需要保持默认
+    greendao {
+        //数据库版本号
+        schemaVersion 1
+        //数据库所在包
+        daoPackage 'com.erajiezhang.db.dbhelp'
+        //生成的数据库文件的目录
+        targetGenDir 'src/main/java'
+        //自动生成单元测试
+        //    generateTests true
+        //生成的单元测试目录
+        //    targetGenDirTests
+    }
+
+
     compileSdkVersion var.compileSdkVersion
     defaultConfig {
         applicationId "com.erajiezhang"
@@ -54,9 +71,6 @@ dependencies {
     //butterknife支持
     implementation var.butterknife
     annotationProcessor var.butterknife_compiler
-//
-//    implementation var.butterknife_plugin
-//    annotationProcessor var.butterknife_neenbedankt
 
 
 
@@ -70,11 +84,9 @@ dependencies {
     implementation 'org.xutils:xutils:3.8.4'
     implementation 'com.loopj.android:android-async-http:1.4.10'
     implementation 'com.github.bumptech.glide:glide:4.11.0'
-//    implementation var.glide_compiler
     implementation project(':RxRQCode')
     implementation project(':schultegril')
     implementation project(':General')
-//    implementation project(':RxUI')
 
     implementation 'com.alibaba:arouter-api:1.4.0'
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
@@ -85,4 +97,6 @@ dependencies {
 
     implementation 'com.github.bumptech.glide:glide:4.5.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
+
+    implementation 'org.greenrobot:greendao:3.2.2'
 }

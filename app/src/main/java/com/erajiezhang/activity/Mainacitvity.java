@@ -72,6 +72,22 @@ public class Mainacitvity extends BaseActivity {
                 break;
             case R.id.button2:
                 BaseArouteUtil.returnActivity(ARouterPath.GameContentActivity, ARouterPath.GROUP_SCHULTEGRIL);
+
+//                Student student = new Student();
+//                student.setAge(22);
+//                student.setName("EraJieZhang");
+//                student.setNum("17090313417");
+//
+//                StudentDaoOpe.saveData(mActivity,student);
+//
+//
+//                List<Student> list = StudentDaoOpe.queryAll(mActivity);
+//
+//                for (int i = 0, size = list.size(); i < size; i++) {
+//                    RxLogTool.v("学生表数据" + list.get(i).toString());
+//                }
+
+
                 break;
             case R.id.button3:
                 BaseArouteUtil.returnActivity(ARouterPath.GobangActivity);
@@ -91,6 +107,7 @@ public class Mainacitvity extends BaseActivity {
                 break;
         }
     }
+
 
 
     // 拦截的回调
