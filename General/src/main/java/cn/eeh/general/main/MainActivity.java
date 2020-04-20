@@ -4,14 +4,14 @@ import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.Toast;
 
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.FragmentActivity;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.erajie.base.AppManager;
 import com.erajie.global.ARouterPath;
 import com.erajie.global.PresetData;
 import com.erajie.rxutils.GsonUtil;
 
-import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.FragmentActivity;
 import cn.eeh.general.R;
 import cn.eeh.general.bean.MinuBean;
 import cn.eeh.general.databinding.LayoutMainBinding;
@@ -46,7 +46,6 @@ public class MainActivity extends FragmentActivity  {
 				toast.show();
 				exitTime = System.currentTimeMillis();
 			} else {
-				AppManager.getAppManager().AppExit();
 				System.exit(0);
 			}
 			return true;

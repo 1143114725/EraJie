@@ -80,6 +80,7 @@ dependencies {
     implementation 'com.alibaba:fastjson:1.2.62'
     implementation project(':RxUtils')
     implementation project(':RxHttp')
+    implementation project(':RxUI')
     implementation 'com.google.zxing:core:3.4.0'
     implementation 'org.xutils:xutils:3.8.4'
     implementation 'com.loopj.android:android-async-http:1.4.10'
@@ -92,11 +93,15 @@ dependencies {
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.1'
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'org.jetbrains:annotations:19.0.0'
-
+//BUG收集
     implementation 'com.tencent.bugly:crashreport:3.1.0'
-
+//glide 图片处理
     implementation 'com.github.bumptech.glide:glide:4.5.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
-
+//数据库
     implementation 'org.greenrobot:greendao:3.2.2'
+//腾讯UI
+    implementation 'com.qmuiteam:qmui:2.0.0-alpha04'
+//轮播图
+    implementation 'com.hacknife:carouselbanner:1.1.2'
 }

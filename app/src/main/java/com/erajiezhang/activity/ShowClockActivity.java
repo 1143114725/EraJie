@@ -5,10 +5,10 @@ import android.os.Bundle;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.erajie.base.BaseActivity;
 import com.erajie.global.ARouterPath;
 import com.erajie.rxutils.RxLogTool;
 import com.erajiezhang.R;
-import com.erajiezhang.base.BaseActivity;
 import com.erajiezhang.bean.ReturnBean;
 
 import butterknife.BindView;

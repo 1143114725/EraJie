@@ -1,24 +1,30 @@
 package com.erajiezhang.activity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
 import com.erajie.arout.BaseArouteUtil;
+import com.erajie.base.BaseActivity;
 import com.erajie.global.ARouterPath;
 import com.erajie.rxutils.RxLogTool;
 import com.erajiezhang.R;
-import com.erajiezhang.base.BaseActivity;
 import com.erajiezhang.bean.ReturnBean;
+import com.erajiezhang.util.ImageFactory;
 import com.erajiezhang.view.RxDialogChooseImage;
+import com.hacknife.carouselbanner.Banner;
+import com.hacknife.carouselbanner.CoolCarouselBanner;
+import com.hacknife.carouselbanner.interfaces.OnCarouselItemChangeListener;
+import com.hacknife.carouselbanner.interfaces.OnCarouselItemClickListener;
 
-import org.jetbrains.annotations.Nullable;
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,7 +35,7 @@ import butterknife.OnClick;
  * @author EraJieZhang
  * @data 2019/5/18
  */
-@Route(path = ARouterPath.Mainacitvity)
+@Route(path = ARouterPath.Mainacitvity,group = ARouterPath.GROUP_MAIN)
 public class Mainacitvity extends BaseActivity {
 
     @BindView(R.id.toarouter)
@@ -37,16 +43,51 @@ public class Mainacitvity extends BaseActivity {
     @BindView(R.id.img_show)
     ImageView imgshow;
 
+    @BindView(R.id.ll_main_interceptor)
+    LinearLayout mInterceptor;
+
+    @BindView(R.id.main_banner)
+    CoolCarouselBanner mMainBanner;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+//设置黑色状态栏
+//        QMUIStatusBarHelper.setStatusBarLightMode(this);
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(mActivity);
-        //		BaseArouteUtil.returnActivity(ARouterPath.HomeActivity,ARouterPath.GROUP_GENERAL);
+        setBanner();
+
     }
 
-    @OnClick({R.id.toarouter, R.id.button2, R.id.button3, R.id.button7, R.id.button8})
+    /**
+     * 设置轮播banner
+     */
+    private void setBanner() {
+        Banner.init(new ImageFactory());
+        List<String> bannerList = new ArrayList<>();
+        mMainBanner.setOnCarouselItemChangeListener(new OnCarouselItemChangeListener() {
+            @Override
+            public void onItemChange(int position) {
+                RxLogTool.v("banner 滚动监听：" + position);
+            }
+        });//滚动监听
+        mMainBanner.setOnCarouselItemClickListener(new OnCarouselItemClickListener() {
+            @Override
+            public void onItemClick(int position, String url) {
+                RxLogTool.v("banner 点击监听：" + position + ">>>URL = " + url);
+            }
+        });//点击监听
+        bannerList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587302233050&di=d49d307e18a34dade37e1c68f6776aba&imgtype=0&src=http%3A%2F%2Fimg.app178.com%2Ftu%2F201410%2Fyhrgcry32t4.jpg");
+        bannerList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587302233050&di=65865d302ada5c0f003396eeb806e8fd&imgtype=0&src=http%3A%2F%2Ffile.mumayi.com%2Fforum%2F201401%2F16%2F231735cfp4046206r4i705.jpg");
+        bannerList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587302233050&di=fe3f9e9d9f8e023bd270b245c649a390&imgtype=0&src=http%3A%2F%2Fattachments.gfan.com%2Fforum%2Fattachments2%2F201301%2F29%2F125722eh9nj87bq20eq2e8.jpg");
+        bannerList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587302233050&di=8a8472620c71fd2e929f93dd851b1b47&imgtype=0&src=http%3A%2F%2Fattach.bbs.miui.com%2Fforum%2F201304%2F25%2F195151szk8umd8or8fmfa5.jpg");
+
+        mMainBanner.initBanner(bannerList) ;
+    }
+
+    @OnClick({R.id.toarouter, R.id.button2, R.id.button3, R.id.button7, R.id.button8,R.id.ll_main_interceptor,R.id.ll_main_powerSurvey})
     public void onViewClicked(View view) {
 
         switch (view.getId()) {
@@ -73,20 +114,6 @@ public class Mainacitvity extends BaseActivity {
             case R.id.button2:
                 BaseArouteUtil.returnActivity(ARouterPath.GameContentActivity, ARouterPath.GROUP_SCHULTEGRIL);
 
-//                Student student = new Student();
-//                student.setAge(22);
-//                student.setName("EraJieZhang");
-//                student.setNum("17090313417");
-//
-//                StudentDaoOpe.saveData(mActivity,student);
-//
-//
-//                List<Student> list = StudentDaoOpe.queryAll(mActivity);
-//
-//                for (int i = 0, size = list.size(); i < size; i++) {
-//                    RxLogTool.v("学生表数据" + list.get(i).toString());
-//                }
-
 
                 break;
             case R.id.button3:
@@ -102,6 +129,12 @@ public class Mainacitvity extends BaseActivity {
                 break;
             case R.id.button8:
                 BaseArouteUtil.returnActivity(ARouterPath.ShowImageActivity);
+                break;
+            case R.id.ll_main_interceptor:
+                BaseArouteUtil.returnActivity(ARouterPath.GobangActivity);
+                break;
+            case R.id.ll_main_powerSurvey:
+//                BaseArouteUtil.returnActivity(ARouterPath.GobangActivity);
                 break;
             default:
                 break;
@@ -138,16 +171,6 @@ public class Mainacitvity extends BaseActivity {
         }
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-
-        super.onActivityResult(requestCode, resultCode, data);
-        switch (resultCode) {
-            case 123:
-                RxLogTool.v("接收到其他activity传过来的值");
-                break;
-        }
-    }
 
 
 

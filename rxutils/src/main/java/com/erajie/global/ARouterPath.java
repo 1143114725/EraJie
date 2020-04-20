@@ -16,6 +16,8 @@ public class ARouterPath {
 	/**
 	 * 主项目
 	 */
+	//主项目-欢迎页
+	public static final String APPWelcomeActivity = "/activity/WelcomeActivity";
 	//主项目-主页面
 	public static final String Mainacitvity = "/activity/Mainacitvity";
 	//主项目-时钟页面
@@ -26,6 +28,9 @@ public class ARouterPath {
 	public static final String ShowImageActivity = "/activity/ShowImageActivity";
 	//主项目-五子棋
 	public static final String GobangActivity = "/activity/GobangActivity";
+	//主项目- 登录
+	public static final String LoginActivity = "/activity/LoginActivity";
+
 	/**
 	 * 舒尔特表
 	 */

@@ -8,10 +8,10 @@ import android.view.View;
 import android.view.Window;
 import android.view.inputmethod.InputMethodManager;
 
+import androidx.fragment.app.FragmentActivity;
+
 import java.util.Timer;
 import java.util.TimerTask;
-
-import androidx.fragment.app.FragmentActivity;
 
 /**
  * @Description: 所有activity的基类
@@ -28,10 +28,6 @@ public abstract class BaseActivity extends Activity {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         mActivity = this;
-        AppManager.getAppManager().addActivity(mActivity);
-    
-//        ImmerseNotificationBarUtil.setColor();
-//        ImmerseNotificationBarUtil.setImmerseNotificationBar(mActivity);
 
     }
     
@@ -72,7 +68,6 @@ public abstract class BaseActivity extends Activity {
      */
     @Override
     protected void onDestroy() {
-        AppManager.getAppManager().finishActivity(mActivity);
         super.onDestroy();
     }
 

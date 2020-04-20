@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="barModle" type="com.erajiezhang.viewmodle.BarViewModleBean" />
+        <variable name="powerbean" type="com.erajiezhang.viewmodle.PowerSurveyBean" />
+    </data>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/include_powersurvey"
+            layout="@layout/title_bar"
+            android:layout_height="@dimen/dp_72"
+            android:layout_width="match_parent"
+            app:barModle="@{barModle}"/>
+
+        <LinearLayout
+            android:id="@+id/fragment_main_root"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"/>
+
+        <LinearLayout
+            android:id="@+id/ll_powersurvey_footbaner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toStartOf="parent">
+
+            <TextView
+                android:padding="@dimen/dp_8"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="@{powerbean.ordinary}"
+                android:onClick="@{powerbean::onClickOrdinary}"/>
+
+            <TextView
+                android:padding="@dimen/dp_8"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="@{powerbean.user}"
+                android:onClick="@{powerbean::onClickUser}"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</layout>

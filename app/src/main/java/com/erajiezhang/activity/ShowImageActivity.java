@@ -11,9 +11,9 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.erajie.base.BaseActivity;
 import com.erajie.global.ARouterPath;
 import com.erajiezhang.R;
-import com.erajiezhang.base.BaseActivity;
 
 /**
  * 测试图片旋转放大缩小

@@ -11,17 +11,17 @@
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
+        android:icon="@mipmap/icon_interceptor"
+        android:label="@string/string_btn_interceptor"
         android:usesCleartextTraffic="true"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/icon_interceptor"
         android:supportsRtl="true"
         tools:ignore="GoogleAppIndexingWarning"
-        android:theme="@android:style/Theme.NoTitleBar">
+        android:theme="@style/TXThem">
 
 
         <activity
-            android:name=".activity.Mainacitvity"
+            android:name=".activity.WelcomeActivity"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -29,11 +29,25 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <activity android:name=".activity.Mainacitvity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
         <activity
-            android:name=".activity.ShowClockActivity"/>
-        <activity android:name=".activity.ThreelevellinkageActivity"/>
-        <activity android:name=".activity.ShowImageActivity"/>
-        <activity android:name=".activity.GobangActivity"/>
+            android:name=".activity.ShowClockActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:label="@string/app_name"/>
+        <activity android:name=".activity.ThreelevellinkageActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:label="@string/app_name"/>
+        <activity android:name=".activity.ShowImageActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:label="@string/app_name"/>
+        <activity android:name=".activity.GobangActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:label="@string/app_name"/>
+        <activity android:name=".activity.LoginActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:label="@string/app_name"/>
 
     </application>
 </manifest>

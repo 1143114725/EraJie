@@ -8,4 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="TXThem" parent="QMUI.Compat">
+    </style>
+
 </resources>

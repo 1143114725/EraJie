@@ -8,11 +8,12 @@ import android.graphics.Paint;
 import android.graphics.Point;
 import android.os.Bundle;
 import android.os.Parcelable;
-import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
 
 import com.erajiezhang.R;
 
@@ -475,6 +476,7 @@ public class GobangView extends View {
 			}
 		}
 		mIsWhite = !mIsWhite;
+		mIsGameOver = false;
 		invalidate();
 	}
 	
@@ -482,12 +484,14 @@ public class GobangView extends View {
 	 * 认输
 	 */
 	public void admitdefeat() {
+		mIsGameOver = true;
 		if ( mIsWhite ) {
-			mIsGameOver = true;
 			mIsWhiteWinner = false;
-			String text = mIsWhiteWinner ? "白棋胜利！" : "黑棋胜利！";
-			Toast.makeText(getContext(), text, Toast.LENGTH_SHORT).show();
-			start();
+		}else{
+			mIsWhiteWinner = true;
 		}
+		String text = mIsWhiteWinner ? "白棋胜利！" : "黑棋胜利！";
+		Toast.makeText(getContext(), text, Toast.LENGTH_SHORT).show();
+		start();
 	}
 }

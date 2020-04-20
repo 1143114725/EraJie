@@ -1,6 +1,7 @@
 package com.erajie.rxutils;
 
 import android.annotation.TargetApi;
+import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.CompressFormat;
@@ -33,6 +34,8 @@ import android.renderscript.RenderScript;
 import android.renderscript.ScriptIntrinsicBlur;
 import android.util.Log;
 import android.widget.ImageView;
+
+import androidx.vectordrawable.graphics.drawable.VectorDrawableCompat;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -1975,5 +1978,19 @@ public class RxImageTool {
         canvas.drawText(innerTxt, textX, posY + txtSize-2, paint);
 
         return bm;
+    }
+
+    /**
+     * imageciew 更换颜色
+     * @param context
+     * @param drawableid
+     * @param imageView
+     * @param color
+     */
+    public static void setImageColor(Context context,int drawableid,ImageView imageView,int color){
+        VectorDrawableCompat vectorDrawableCompat = VectorDrawableCompat.create(context.getResources(), drawableid,context.getTheme());
+        //你需要改变的颜色
+        vectorDrawableCompat.setTint(context.getResources().getColor(color));
+        imageView.setImageDrawable(vectorDrawableCompat);
     }
 }

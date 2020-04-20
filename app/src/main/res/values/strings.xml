@@ -13,7 +13,19 @@
 
     <string name="string_btn_text_return_Arouter">测试Arouter跳转</string>
     <string name="string_btn_schultegril_game">跨模块跳转舒尔特</string>
+<!--  五子棋  -->
     <string name="string_btn_interceptor">五子棋</string>
+    <string name="string_btn_admitdefeat">认输</string>
+    <string name="string_btn_restart">再来一局</string>
+    <string name="string_btn_undo">悔棋</string>
+
+<!--  五子棋  -->
+
     <string name="string_btn_onactivityforresult">Arouter代值跳转回调</string>
     <string name="string_btn_zoomImageView">缩放imageview</string>
+
+
+    <string name="string_powerSurvey">电力调查</string>
+    <string name="string_powerSurvey_ordinary">一般型电力调查</string>
+    <string name="string_powerSurvey_user">电力用户普查</string>
 </resources>

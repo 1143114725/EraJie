@@ -1,4 +1,4 @@
-package com.erajiezhang.interceptor;
+package com.erajie.arout;
 
 import android.content.Context;
 
@@ -9,6 +9,7 @@ import com.alibaba.android.arouter.facade.template.IInterceptor;
 import com.erajie.rxutils.RxLogTool;
 
 /**
+ * 登陆拦截器
  * @author EraJieZhang
  * @data 2020/1/16
  */

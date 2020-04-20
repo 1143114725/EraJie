@@ -11,10 +11,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.erajie.base.BaseActivity;
 import com.erajie.global.ARouterPath;
 import com.erajie.rxutils.RxLogTool;
 import com.erajiezhang.R;
-import com.erajiezhang.base.BaseActivity;
 import com.erajiezhang.util.LinkageUtil;
 
 import java.util.ArrayList;
