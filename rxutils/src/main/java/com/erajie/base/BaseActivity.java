@@ -19,7 +19,7 @@ import java.util.TimerTask;
  * @since 2015.12.26
  * Activity被创建时回调
  **/
-public abstract class BaseActivity extends Activity {
+public abstract class BaseActivity extends FragmentActivity {
     protected Activity mActivity;
     private static final String TAG = "BaseActivity";
 

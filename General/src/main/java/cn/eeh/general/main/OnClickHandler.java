@@ -2,21 +2,22 @@ package cn.eeh.general.main;
 
 import android.view.View;
 
+import androidx.fragment.app.FragmentActivity;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.lifecycle.Lifecycle;
+
 import com.alibaba.android.arouter.launcher.ARouter;
 import com.erajie.global.ARouterPath;
 import com.erajie.rxutils.RxLogTool;
 
 import org.jetbrains.annotations.NotNull;
 
-import androidx.fragment.app.FragmentActivity;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.lifecycle.Lifecycle;
 import cn.eeh.general.R;
 import cn.eeh.general.bean.MinuBean;
-import cn.eeh.general.main.fragment.FoundFragment;
 import cn.eeh.general.main.fragment.MyFragment;
 import cn.eeh.general.main.fragment.PublicClassFragment;
 import cn.eeh.general.main.fragment.academic.AcademicCirclesFragment;
+import cn.eeh.general.main.fragment.found.FoundFragment;
 
 /**
  * @author EraJieZhang

@@ -7,10 +7,11 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import java.util.List;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.List;
+
 import cn.eeh.general.R;
 
 /**
@@ -22,8 +23,8 @@ public class AcademicAdapter extends RecyclerView.Adapter {
 	
 	Context context;
 	List<Integer> list;
-	
-	AcademicAdapter(Context context, List<Integer> list) {
+
+	public AcademicAdapter(Context context, List<Integer> list) {
 		this.context = context;
 		this.list = list;
 	}

@@ -30,6 +30,8 @@ public class ARouterPath {
 	public static final String GobangActivity = "/activity/GobangActivity";
 	//主项目- 登录
 	public static final String LoginActivity = "/activity/LoginActivity";
+	//主项目 - 电力调查页面
+	public static final String PowerSurveyMainActivity = "/powersurvey/PowerSurveyMainActivity";
 
 	/**
 	 * 舒尔特表

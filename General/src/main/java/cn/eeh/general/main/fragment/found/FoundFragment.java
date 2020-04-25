@@ -1,4 +1,4 @@
-package cn.eeh.general.main.fragment;
+package cn.eeh.general.main.fragment.found;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -6,13 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.erajie.base.BaseFragment;
 import com.erajie.global.ARouterPath;
 import com.erajie.rxutils.RxLogTool;
 
-import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
 import cn.eeh.general.R;
 import cn.eeh.general.databinding.FragmentMyBinding;
 

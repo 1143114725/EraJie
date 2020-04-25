@@ -2,10 +2,12 @@ package com.erajiezhang.activity;
 
 import android.os.Bundle;
 import android.os.Parcelable;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
@@ -16,6 +18,7 @@ import com.erajie.global.ARouterPath;
 import com.erajie.rxutils.RxLogTool;
 import com.erajiezhang.R;
 import com.erajiezhang.bean.ReturnBean;
+import com.erajiezhang.util.AppManager;
 import com.erajiezhang.util.ImageFactory;
 import com.erajiezhang.view.RxDialogChooseImage;
 import com.hacknife.carouselbanner.Banner;
@@ -134,7 +137,7 @@ public class Mainacitvity extends BaseActivity {
                 BaseArouteUtil.returnActivity(ARouterPath.GobangActivity);
                 break;
             case R.id.ll_main_powerSurvey:
-//                BaseArouteUtil.returnActivity(ARouterPath.GobangActivity);
+                BaseArouteUtil.returnActivity(ARouterPath.PowerSurveyMainActivity,ARouterPath.GROUP_MAIN);
                 break;
             default:
                 break;
@@ -172,7 +175,21 @@ public class Mainacitvity extends BaseActivity {
     }
 
 
-
+    private long exitTime = 0;
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+                Toast.makeText(getApplicationContext(), "再按一次退出程序", Toast.LENGTH_SHORT).show();
+                exitTime = System.currentTimeMillis();
+            } else {
+                AppManager.getAppManager().AppExit();
+                System.exit(0);
+            }
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
+    }
 
 
 }

@@ -62,17 +62,17 @@ public class WelcomeActivity extends BaseActivity {
         Glide.with(mActivity).load(url).into(mIvShow);
         mCountDownTimerButton.setClickAfter(" 秒");
         mCountDownTimerButton.setClickBeffor("进入");
-        mCountDownTimerButton.setDuration(3);
+        mCountDownTimerButton.setDuration(1);
         mCountDownTimerButton.startTimer();
         mCountDownTimerButton.setCallBack(new CountDownTimerButton.CallBack() {
             @Override
             public void onCleck() {
                 if ((Boolean) SpUtil.getParam(mActivity,PresetData.IsLogin,false)){
-//                    BaseArouteUtil.returnActivity(ARouterPath.Mainacitvity,ARouterPath.GROUP_MAIN);
-                    BaseArouteUtil.returnActivity(ARouterPath.GobangActivity,ARouterPath.GROUP_MAIN);
+                    BaseArouteUtil.returnActivity(ARouterPath.Mainacitvity,ARouterPath.GROUP_MAIN);
+//                    BaseArouteUtil.returnActivity(ARouterPath.GobangActivity,ARouterPath.GROUP_MAIN);
                 }else{
-//                    BaseArouteUtil.returnActivity(ARouterPath.LoginActivity,ARouterPath.GROUP_MAIN);
-                    BaseArouteUtil.returnActivity(ARouterPath.GobangActivity,ARouterPath.GROUP_MAIN);
+                    BaseArouteUtil.returnActivity(ARouterPath.LoginActivity,ARouterPath.GROUP_MAIN);
+//                    BaseArouteUtil.returnActivity(ARouterPath.GobangActivity,ARouterPath.GROUP_MAIN);
                 }
                 mActivity.finish();
             }

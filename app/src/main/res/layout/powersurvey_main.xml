@@ -15,17 +15,17 @@
 
         <include
             android:id="@+id/include_powersurvey"
-            layout="@layout/title_bar"
-            android:layout_height="@dimen/dp_72"
+            layout="@layout/title_bar_binding"
+            android:layout_height="wrap_content"
             android:layout_width="match_parent"
             app:barModle="@{barModle}"/>
 
-        <LinearLayout
-            android:id="@+id/fragment_main_root"
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/vp_powersurvey_root"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"/>
+            android:layout_weight="1"/>
 
         <LinearLayout
             android:id="@+id/ll_powersurvey_footbaner"

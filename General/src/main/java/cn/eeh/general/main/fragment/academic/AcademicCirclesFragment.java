@@ -6,6 +6,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.annotation.Nullable;
+import androidx.databinding.DataBindingUtil;
+import androidx.fragment.app.Fragment;
+import androidx.viewpager2.widget.ViewPager2;
+
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.erajie.base.BaseFragment;
 import com.erajie.global.ARouterPath;
@@ -13,15 +18,11 @@ import com.erajie.global.ARouterPath;
 import java.util.ArrayList;
 import java.util.List;
 
-import androidx.annotation.Nullable;
-import androidx.databinding.DataBindingUtil;
-import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
 import cn.eeh.general.R;
 import cn.eeh.general.databinding.FragmentAcademicBinding;
-import cn.eeh.general.main.fragment.FoundFragment;
 import cn.eeh.general.main.fragment.MyFragment;
 import cn.eeh.general.main.fragment.PublicClassFragment;
+import cn.eeh.general.main.fragment.found.FoundFragment;
 
 /**
  * 学术圈页面
@@ -54,7 +55,7 @@ public class AcademicCirclesFragment extends BaseFragment{
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 		mBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_academic, container, false);
 		View view = mBinding.getRoot();
-		ViewPager2 mViewPager = view.findViewById(R.id.vp_academin_main);
+		 mViewPager = view.findViewById(R.id.vp_academin_main);
 		ArrayList<Fragment> fragments = new ArrayList<>();
 		
 		fragments.add(FoundFragment.getInstance());

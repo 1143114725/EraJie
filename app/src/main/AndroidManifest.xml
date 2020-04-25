@@ -48,6 +48,9 @@
         <activity android:name=".activity.LoginActivity"
             android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
             android:label="@string/app_name"/>
+        <activity android:name=".powersurvey.PowerSurveyMainActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
+            android:label="@string/app_name"/>
 
     </application>
 </manifest>
