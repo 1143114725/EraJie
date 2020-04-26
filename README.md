@@ -10,3 +10,4 @@
    签名文件 D:\Project\Studio\EraJie\erajie.jks
    账号 erajie
    密码 erajie
+   //测试Git
