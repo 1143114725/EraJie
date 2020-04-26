@@ -14,12 +14,11 @@ import com.erajie.global.PresetData;
 import com.erajie.rxutils.GsonUtil;
 import com.erajiezhang.R;
 import com.erajiezhang.powersurvey.fragment.OrdinaryFragment;
+import com.erajiezhang.powersurvey.fragment.UserFragment;
 import com.erajiezhang.viewmodle.BarViewModleBean;
 import com.erajiezhang.viewmodle.PowerSurveyBean;
 
 import java.util.ArrayList;
-
-import cn.eeh.general.main.fragment.PublicClassFragment;
 
 /**
  * @author EraJieZhang
@@ -52,7 +51,7 @@ public class PowerSurveyMainActivity extends BaseActivity {
         ArrayList<Fragment> fragments = new ArrayList<>();
 
         fragments.add(OrdinaryFragment.getInstance());
-        fragments.add(PublicClassFragment.getInstance());
+        fragments.add(UserFragment.getInstance());
 
         powerSurveyAdapter = new PowerSurveyAdapter(this,fragments);
         mViewPager.setAdapter(powerSurveyAdapter);
