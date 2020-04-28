@@ -37,3 +37,9 @@
 -keep class com.qmuiteam.qmui.arch.record.** { *; }
 -keep class androidx.fragment.app.* { *; }
 ###############qmui 混淆 end#################
+
+###############高德地图定位混淆################
+   -keep class com.amap.api.location.**{*;}
+    -keep class com.amap.api.fence.**{*;}
+    -keep class com.loc.**{*;}
+    -keep class com.autonavi.aps.amapapi.model.**{*;}

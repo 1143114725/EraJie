@@ -6,11 +6,11 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.erajie.base.BaseFragment;
-import com.erajie.rxutils.RxLogTool;
 import com.erajiezhang.R;
 import com.qmuiteam.qmui.widget.QMUIEmptyView;
 import com.scwang.smartrefresh.layout.api.RefreshLayout;
@@ -60,24 +60,21 @@ public class OrdinaryFragment extends BaseFragment {
         View root = LayoutInflater.from(getActivity()).inflate(R.layout.ordinary_fragment, null);
         ButterKnife.bind(this, root);
 
+        setRecycleViewDate();
 
-        RxLogTool.v("------------>>OrdinaryFragment");
+        setEmptyView();
+
+        setRefreshLinstener();
+
+
+        return root;
+    }
+
+    /**
+     * 设置错误页面
+     */
+    private void setEmptyView() {
         mEmptyView.show(true);
-
-
-        mRvOrdinary.setLayoutManager(new LinearLayoutManager(mActivity));
-        List<OrdinaryBean> list = new ArrayList<>();
-        for (int i = 0; i <= 10; i++) {
-            OrdinaryBean ordinaryBean= new OrdinaryBean();
-            ordinaryBean.id = i+1;
-            ordinaryBean.name = "EraJieZhang";
-            ordinaryBean.time = "2020年4月24日17:53:33";
-            list.add(ordinaryBean);
-        }
-        mOrdinaryAdapter = new OrdinaryAdapter(mActivity, list);
-        mRvOrdinary.setAdapter(mOrdinaryAdapter);
-
-
 
         mEmptyView.postDelayed(new Runnable() {
             @Override
@@ -88,27 +85,53 @@ public class OrdinaryFragment extends BaseFragment {
                     public void onClick(View v) {
 
                         mEmptyView.setVisibility(View.GONE);
-//                        mRvOrdinary.setVisibility(View.VISIBLE);
+
                     }
                 });
             }
-        }, 2000);
+        }, 1000);
+    }
 
+    /**
+     * 设置刷新事件
+     */
+    private void setRefreshLinstener() {
 
 
         refreshLayout.setOnRefreshListener(new OnRefreshListener() {
             @Override
             public void onRefresh(RefreshLayout refreshlayout) {
                 refreshlayout.finishRefresh(/*2000,0.
-                */false);//传入false表示刷新失败
+                 */false);//传入false表示刷新失败
             }
         });
+
         refreshLayout.setOnLoadMoreListener(new OnLoadMoreListener() {
             @Override
             public void onLoadMore(RefreshLayout refreshlayout) {
                 refreshlayout.finishLoadMore(2000/*,false*/);//传入false表示加载失败
             }
         });
-        return root;
+    }
+
+    /**
+     * 设置recycleView的数据绑定
+     */
+    private void setRecycleViewDate() {
+        /*假数据*/
+        List<OrdinaryBean> list = new ArrayList<>();
+        for (int i = 0; i <= 10; i++) {
+            OrdinaryBean ordinaryBean= new OrdinaryBean();
+            ordinaryBean.id = i+1;
+            ordinaryBean.name = "EraJieZhang";
+            ordinaryBean.time = "2020年4月24日17:53:33";
+            list.add(ordinaryBean);
+        }
+
+        mRvOrdinary.setLayoutManager(new LinearLayoutManager(mActivity));
+        mOrdinaryAdapter = new OrdinaryAdapter(mActivity, list);
+        mRvOrdinary.setAdapter(mOrdinaryAdapter);
+        //添加Android自带的分割线
+        mRvOrdinary.addItemDecoration(new DividerItemDecoration(getActivity(),DividerItemDecoration.VERTICAL));
     }
 }

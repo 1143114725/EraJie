@@ -12,15 +12,17 @@ import android.widget.Toast;
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.alibaba.android.arouter.facade.callback.NavigationCallback;
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationListener;
 import com.erajie.arout.BaseArouteUtil;
 import com.erajie.base.BaseActivity;
 import com.erajie.global.ARouterPath;
 import com.erajie.rxutils.RxLogTool;
 import com.erajiezhang.R;
+import com.erajiezhang.amap.location.AMapLocationUtil;
 import com.erajiezhang.bean.ReturnBean;
 import com.erajiezhang.util.AppManager;
 import com.erajiezhang.util.ImageFactory;
-import com.erajiezhang.view.RxDialogChooseImage;
 import com.hacknife.carouselbanner.Banner;
 import com.hacknife.carouselbanner.CoolCarouselBanner;
 import com.hacknife.carouselbanner.interfaces.OnCarouselItemChangeListener;
@@ -73,13 +75,13 @@ public class Mainacitvity extends BaseActivity {
         mMainBanner.setOnCarouselItemChangeListener(new OnCarouselItemChangeListener() {
             @Override
             public void onItemChange(int position) {
-                RxLogTool.v("banner 滚动监听：" + position);
+//                RxLogTool.v("banner 滚动监听：" + position);
             }
         });//滚动监听
         mMainBanner.setOnCarouselItemClickListener(new OnCarouselItemClickListener() {
             @Override
             public void onItemClick(int position, String url) {
-                RxLogTool.v("banner 点击监听：" + position + ">>>URL = " + url);
+//                RxLogTool.v("banner 点击监听：" + position + ">>>URL = " + url);
             }
         });//点击监听
         bannerList.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587302233050&di=d49d307e18a34dade37e1c68f6776aba&imgtype=0&src=http%3A%2F%2Fimg.app178.com%2Ftu%2F201410%2Fyhrgcry32t4.jpg");
@@ -95,24 +97,30 @@ public class Mainacitvity extends BaseActivity {
 
         switch (view.getId()) {
             case R.id.toarouter:
-                RxLogTool.v("点击toarouter");
-                RxDialogChooseImage dialogChooseImage =new RxDialogChooseImage(mActivity);
-
-
-                if (!dialogChooseImage.isShowing()) {
-                    dialogChooseImage.getFromCameraView().setText("保存图片");
-                    dialogChooseImage.getFromFileView().setVisibility(View.GONE);
-                    dialogChooseImage.getmVLine().setVisibility(View.GONE);
-                    dialogChooseImage.getFromCameraView().setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            RxLogTool.v("关闭弹窗");
-                            dialogChooseImage.cancel();
-                        }
-                    });
-
-                    dialogChooseImage.show();
-                }
+                AMapLocationUtil.getInstance(mActivity, new AMapLocationListener() {
+                    @Override
+                    public void onLocationChanged(AMapLocation aMapLocation) {
+                        RxLogTool.v("aMapLocation:---->>" + aMapLocation.toString());
+                    }
+                }).srartOneClickLocation(null);
+//                RxLogTool.v("点击toarouter");
+//                RxDialogChooseImage dialogChooseImage =new RxDialogChooseImage(mActivity);
+//
+//
+//                if (!dialogChooseImage.isShowing()) {
+//                    dialogChooseImage.getFromCameraView().setText("保存图片");
+//                    dialogChooseImage.getFromFileView().setVisibility(View.GONE);
+//                    dialogChooseImage.getmVLine().setVisibility(View.GONE);
+//                    dialogChooseImage.getFromCameraView().setOnClickListener(new View.OnClickListener() {
+//                        @Override
+//                        public void onClick(View v) {
+//                            RxLogTool.v("关闭弹窗");
+//                            dialogChooseImage.cancel();
+//                        }
+//                    });
+//
+//                    dialogChooseImage.show();
+//                }
                 break;
             case R.id.button2:
                 BaseArouteUtil.returnActivity(ARouterPath.GameContentActivity, ARouterPath.GROUP_SCHULTEGRIL);

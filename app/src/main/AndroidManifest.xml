@@ -1,56 +1,88 @@
-<manifest xmlns:tools="http://schemas.android.com/tools"
-          package="com.erajiezhang"
-          xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
-        tools:ignore="ProtectedPermissions" />
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.erajiezhang">
 
     <application
         android:name=".base.BaseApplication"
         android:allowBackup="true"
         android:icon="@mipmap/icon_interceptor"
         android:label="@string/string_btn_interceptor"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/icon_interceptor"
         android:supportsRtl="true"
-        tools:ignore="GoogleAppIndexingWarning"
-        android:theme="@style/TXThem">
+        android:theme="@style/TXThem"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning">
 
 
         <activity
             android:name=".activity.WelcomeActivity"
             android:label="@string/app_name">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.Mainacitvity"
+        <activity
+            android:name=".activity.Mainacitvity"
             android:label="@string/app_name"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name=".activity.ShowClockActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
-            android:label="@string/app_name"/>
-        <activity android:name=".activity.ThreelevellinkageActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
-            android:label="@string/app_name"/>
-        <activity android:name=".activity.ShowImageActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
-            android:label="@string/app_name"/>
-        <activity android:name=".activity.GobangActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
-            android:label="@string/app_name"/>
-        <activity android:name=".activity.LoginActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
-            android:label="@string/app_name"/>
-        <activity android:name=".powersurvey.PowerSurveyMainActivity"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"
-            android:label="@string/app_name"/>
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".activity.ThreelevellinkageActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".activity.ShowImageActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".activity.GobangActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name=".powersurvey.PowerSurveyMainActivity"
+            android:label="@string/app_name"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <!--         其他配置              -->
+        <!--高德地图配置key-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="6f2d880c1921dc04a1f4beeb14a2eaea" />
+        <service android:name="com.amap.api.location.APSService" />
 
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--    定位权限    -->
+    <!--用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!--用于获取运营商信息，用于支持提供运营商信息相关的接口-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--用于访问wifi网络信息，wifi信息会用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!--用于访问网络，网络定位需要上网-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--用于写入缓存数据到扩展存储卡-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!--用于申请调用A-GPS模块-->
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 </manifest>

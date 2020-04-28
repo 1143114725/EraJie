@@ -106,4 +106,8 @@ dependencies {
     implementation 'com.hacknife:carouselbanner:1.1.2'
 //下拉刷新
     implementation 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'
+//节操视频播放器
+    implementation 'cn.jzvd:jiaozivideoplayer:7.2.4'
+//高德地图定位
+    implementation 'com.amap.api:location:latest.integration'
 }

@@ -11,7 +11,7 @@
     <string name="string_btn_text3">btn3</string>
     <string name="string_btn_text4">btn4</string>
 
-    <string name="string_btn_text_return_Arouter">测试Arouter跳转</string>
+    <string name="string_btn_text_return_Arouter">单次获取定位点</string>
     <string name="string_btn_schultegril_game">跨模块跳转舒尔特</string>
 <!--  五子棋  -->
     <string name="string_btn_interceptor">五子棋</string>
