@@ -1,71 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/btn_ghost_blue_border_normal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp_16">
 
-    <data>
-        <variable name="barModle" type="com.erajiezhang.viewmodle.BarViewModleBean" />
-    </data>
+    <ImageView
+        android:id="@+id/bar_img_back"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_16"
+        android:src="@drawable/vector_drawable_icon_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:padding="@dimen/dp_16"
-        android:layout_height="wrap_content">
+    <ImageView
+        android:id="@+id/bar_img_menu"
+        android:layout_width="@dimen/dp_32"
+        android:layout_height="@dimen/dp_32"
+        android:layout_marginTop="@dimen/dp_16"
+        android:src="@drawable/vector_drawable_menu_block"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="UseAppTint" />
 
-        <ImageView
-            android:id="@+id/bar_img_back"
-            android:layout_width="@dimen/dp_36"
-            android:layout_height="@dimen/dp_36"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:src="@{barModle.backIcon}"
-            android:visibility="@{barModle.backIconVisibility}"
-            app:tint="@{barModle.iconColor}"
-            android:onClick="@{barModle::onClickBack}"/>
+    <TextView
+        android:id="@+id/bar_tv_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/bar_tv_title"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{barModle.title}"
-            android:textColor="@{barModle.textColor}"
-            android:textSize="@{barModle.titleTextSize}"
-            android:visibility="@{barModle.titleVisibility}"
-            android:onClick="@{barModle::onClickTitle}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/bar_tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/bar_tv_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@{barModle.textColor}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:text="@{barModle.menuText}"
-            android:visibility="@{barModle.menuTextVisibility}"
-            android:textSize="@{barModle.menuTextSize}"
-            android:onClick="@{barModle::onClickMenuText}"
-            />
-
-        <ImageView
-            android:id="@+id/bar_img_menu"
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:src="@{barModle.menuIcon}"
-            android:visibility="@{barModle.menuIconVisibility}"
-            android:tint="@{barModle.iconColor}"
-            android:onClick="@{barModle::onClickMenuIcon}"
-            tools:ignore="UseAppTint" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</layout>
+</androidx.constraintlayout.widget.ConstraintLayout>

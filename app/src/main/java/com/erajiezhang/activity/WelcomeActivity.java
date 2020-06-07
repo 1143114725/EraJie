@@ -32,6 +32,15 @@ public class WelcomeActivity extends BaseActivity {
     private  String url = "http://cdn.duitang.com/uploads/item/201512/04/20151204212506_uxNWH.jpeg";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        int islogin = (int) com.erajiezhang.util.SpUtil.getParam(this,"islogin",0);
+        if (islogin == 1){
+            BaseArouteUtil.returnActivity(ARouterPath.Mainacitvity,ARouterPath.GROUP_MAIN);
+            finish();
+        }else{
+            com.erajiezhang.util.SpUtil.setParam(this,"islogin",1);
+        }
+
         QMUIStatusBarHelper.translucent(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);

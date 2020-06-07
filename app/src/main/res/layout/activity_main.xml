@@ -6,6 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/include"
+        layout="@layout/title_bar" />
 
     <com.hacknife.carouselbanner.CoolCarouselBanner
         android:id="@+id/main_banner"
@@ -15,8 +18,9 @@
         app:indicatorGravity="left"
         app:indicatorSelectedSrc="#d6c2c2"
         app:indicatorUnselectedSrc="#df0000"
-        app:speedPerPixelMillisecond="0.8"
+        app:layout_constraintTop_toBottomOf="@+id/include"
         app:orientation="horizontal"
+        app:speedPerPixelMillisecond="0.8"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout

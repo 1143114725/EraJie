@@ -5,8 +5,10 @@ import android.app.Application;
 import androidx.multidex.MultiDex;
 
 import com.alibaba.android.arouter.launcher.ARouter;
+import com.erajie.rxutils.RxLogTool;
 import com.erajie.rxutils.RxTool;
 import com.tencent.bugly.crashreport.CrashReport;
+import com.tencent.mmkv.MMKV;
 
 import org.xutils.x;
 
@@ -51,5 +53,8 @@ public class BaseApplication extends Application {
     
         //测试阶段建议设置成true，发布时设置为false。
         CrashReport.initCrashReport(getApplicationContext(), "6f8a3fec40", true);
+        //MMKV初始化
+        String rootDir = MMKV.initialize(this);
+        RxLogTool.v("rootDir:" + rootDir);
     }
 }

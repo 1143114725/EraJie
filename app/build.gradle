@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-android'
 apply plugin: 'org.greenrobot.greendao'
 
 android {
@@ -110,4 +112,13 @@ dependencies {
     implementation 'cn.jzvd:jiaozivideoplayer:7.2.4'
 //高德地图定位
     implementation 'com.amap.api:location:latest.integration'
+
+    implementation 'com.tencent:mmkv:1.1.1'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+
+}
+repositories {
+    mavenCentral()
 }

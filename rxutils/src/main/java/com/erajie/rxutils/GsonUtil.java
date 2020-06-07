@@ -159,5 +159,5 @@ public class GsonUtil {
 	public static String BeanToJson(Object object){
 		return gson.toJson(object);
 	}
-	
+
 }
