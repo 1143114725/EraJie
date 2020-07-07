@@ -58,6 +58,10 @@
             android:value="6f2d880c1921dc04a1f4beeb14a2eaea" />
         <service android:name="com.amap.api.location.APSService" />
 
+        <meta-data
+            android:name="ATMAN_CHANNEL"
+            android:value="${ATMAN_CHANNEL_VALUE}" />
+
     </application>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 

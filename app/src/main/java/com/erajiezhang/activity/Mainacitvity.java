@@ -1,6 +1,8 @@
 package com.erajiezhang.activity;
 
 import android.annotation.SuppressLint;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.view.KeyEvent;
@@ -76,6 +78,15 @@ public class Mainacitvity extends BaseActivity {
         setBanner();
         setbar();
 
+        //测试多渠道打包
+        ApplicationInfo appInfo = null;
+        try {
+            appInfo = getApplication().getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        String app_version = appInfo.metaData.getString("ATMAN_CHANNEL");
+        RxLogTool.i("我试试看吧当前是什么渠道：：：：", app_version + "=========");
 
     }
 
